@@ -133,7 +133,7 @@ export type SiderMenuProps = {
   hide?: boolean;
   className?: string;
   style?: CSSProperties;
-} & Pick<BaseMenuProps, Exclude<keyof BaseMenuProps, ['onCollapse']>>;
+} & Omit<BaseMenuProps, 'onCollapse'>;
 
 export const defaultRenderCollapsedButton = (collapsed?: boolean) =>
   collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />;
